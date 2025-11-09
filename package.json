@@ -11,12 +11,13 @@
     "style.min.css"
   ],
   "scripts": {
+    "dev": "vite --host",
     "prepack": "vite build && cp dist/style.css style.min.css",
     "build": "npm pack --dry-run"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vincentdoerig/latex-css.git"
+    "url": "git+https://github.com/siyusun02/latex-css.git"
   },
   "keywords": [
     "latex",
@@ -24,12 +25,8 @@
     "classless-theme",
     "css"
   ],
-  "author": "Vincent Dörig",
+  "author": "Si Yu Sun",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vincentdoerig/latex-css/issues"
-  },
-  "homepage": "https://latex.vercel.app",
   "devDependencies": {
     "vite": "^4.4.9"
   }

@@ -101,10 +101,12 @@
 }
 
 :root {
-  --body-color: hsl(0, 5%, 10%);
-  --body-bg-color: hsl(210, 20%, 98%);
+  --body-color: black;
+  --body-bg-color: white;
   --link-visited: hsl(0, 100%, 33%);
-  --link-focus-outline: hsl(220, 90%, 52%);
+  --link-hover-bg-color: hsl(0deg 100% 33% / 8%);
+  --link-hover-shadow: 0 4px 6px -1px var(--link-hover-bg-color);
+  --link-focus-outline: hsl(60, 100%, 50%);
   --pre-bg-color: hsl(210, 28%, 93%);
   --kbd-bg-color: hsl(210, 5%, 100%);
   --kbd-border-color: hsl(210, 5%, 70%);
@@ -122,8 +124,10 @@
 
 .latex-dark {
   --body-color: hsl(0, 0%, 86%);
-  --body-bg-color: hsl(0, 0%, 16%);
+  --body-bg-color: hsl(0, 0%, 8%);
   --link-visited: hsl(196 80% 77%);
+  --link-hover-bg-color: hsl(196deg 80% 77% / 17%);
+  --link-hover-bg-color: hsl(196deg 100% 33% / 8%);
   --link-focus-outline: hsl(215, 63%, 73%);
   --pre-bg-color: hsl(0, 1%, 25%);
   --kbd-bg-color: hsl(0, 0%, 16%);
@@ -137,7 +141,7 @@
 @media (prefers-color-scheme: dark) {
    .latex-dark-auto {
     --body-color: hsl(0, 0%, 86%);
-    --body-bg-color: hsl(0, 0%, 16%);
+    --body-bg-color: hsl(0, 0%, 8%);
     --link-visited: hsl(196 80% 77%);
     --link-focus-outline: hsl(215, 63%, 73%);
     --pre-bg-color: hsl(0, 1%, 25%);
@@ -238,10 +242,18 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
-/* Make links red */
+/* Style links */
 a,
 a:visited {
-  color: var(--link-visited);
+  text-decoration: none;
+  color: var(--body-color);
+  border: 1px solid var(--link-visited);
+  padding: 0 0.25em;
+}
+
+a:hover {
+  background-color: var(--link-hover-bg-color);
+  box-shadow: var(--link-hover-shadow);
 }
 
 a:focus {
